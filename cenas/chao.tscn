@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c73no4j382xqo"]
+
+[ext_resource type="Script" uid="uid://cj03fqm7qiado" path="res://cenas/chao.gd" id="1_480eu"]
+
+[node name="Node" type="Node" unique_id=1139017376]
+script = ExtResource("1_480eu")

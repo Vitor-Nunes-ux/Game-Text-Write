@@ -1,0 +1,8 @@
+# Cache e arquivos importados do Godot 4
+.godot/
+
+# Se for Godot 3, use a linha abaixo:
+#.import/
+
+# Arquivos de tradução/exportação temporários
+*.translation

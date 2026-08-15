@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bt4gt4ycbw4ob"]
+
+[ext_resource type="Texture2D" uid="uid://cja6cfqm78k3h" path="res://Mini Pixel Pack 3/Player ship/Player_ship (16 x 16).png" id="1_8or6t"]
+[ext_resource type="Script" uid="uid://78lgpql0wcah" path="res://cenas/player.gd" id="1_unwft"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kthid"]
+atlas = ExtResource("1_8or6t")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xojfc"]
+atlas = ExtResource("1_8or6t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_unwft"]
+atlas = ExtResource("1_8or6t")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_15dsx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kthid")
+}],
+"loop": true,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xojfc")
+}],
+"loop": true,
+"name": &"esquerda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_unwft")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8or6t"]
+size = Vector2(64, 50)
+
+[node name="Player" type="CharacterBody2D" unique_id=1568436081]
+script = ExtResource("1_unwft")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2048489601]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_15dsx")
+animation = &"esquerda"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=922216001]
+shape = SubResource("RectangleShape2D_8or6t")

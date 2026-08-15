@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://d3g3a31aokinm"]
+
+[ext_resource type="Script" uid="uid://cgm742bpneqyw" path="res://cenas/bloco.gd" id="1_tvpgo"]
+[ext_resource type="Texture2D" uid="uid://fgmfytfitjy1" path="res://bloque.png" id="2_0m5je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fbmd"]
+size = Vector2(4, 4)
+
+[sub_resource type="Animation" id="Animation_tvpgo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0m5je"]
+resource_name = "danificado"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.56666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_rtrtc"]
+resource_name = "normal"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kfgl0"]
+_data = {
+&"RESET": SubResource("Animation_tvpgo"),
+&"danificado": SubResource("Animation_0m5je"),
+&"normal": SubResource("Animation_rtrtc")
+}
+
+[node name="Bloco" type="StaticBody2D" unique_id=879041861]
+script = ExtResource("1_tvpgo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1290107116]
+texture_filter = 1
+texture = ExtResource("2_0m5je")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=653811761]
+shape = SubResource("RectangleShape2D_7fbmd")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1608885286]
+libraries/ = SubResource("AnimationLibrary_kfgl0")
+autoplay = &"normal"

@@ -1,0 +1,290 @@
+[gd_scene format=3 uid="uid://rwkn548hann7"]
+
+[ext_resource type="Script" uid="uid://c0iqyb2m4n381" path="res://cenas/main_menu.gd" id="1_asf56"]
+[ext_resource type="Texture2D" uid="uid://brtxnofycblp7" path="res://free-moon-pixel-game-backgrounds/3 background/1.png" id="1_xlclq"]
+[ext_resource type="Texture2D" uid="uid://vvdeaq1wybsq" path="res://free-moon-pixel-game-backgrounds/2 background/3.png" id="2_5ns8n"]
+[ext_resource type="Texture2D" uid="uid://bgne50hijgb77" path="res://free-moon-pixel-game-backgrounds/3 background/2.png" id="2_um4lk"]
+[ext_resource type="Script" uid="uid://cvf1ifa10g7gl" path="res://cenas/moon.gd" id="3_5t5rh"]
+[ext_resource type="Script" uid="uid://ckvia4b8e4ody" path="res://cenas/forest.gd" id="3_676e1"]
+[ext_resource type="Texture2D" uid="uid://de3wvawtj51xm" path="res://Dynamic Space Background FREE/Stars Small_2.png" id="3_kgs3e"]
+[ext_resource type="Texture2D" uid="uid://cmb8pe55gtm0k" path="res://free-moon-pixel-game-backgrounds/3 background/3.png" id="4_s5yxo"]
+[ext_resource type="Texture2D" uid="uid://dcvqnilrl8jxe" path="res://Dynamic Space Background FREE/Stars-Big_1_1_PC.png" id="5_5t5rh"]
+[ext_resource type="Script" uid="uid://bpi4wvy5hqmup" path="res://cenas/sparkles_end.gd" id="5_fkfeq"]
+[ext_resource type="Script" uid="uid://c5k6xne3spdqu" path="res://cenas/bushes_2.gd" id="7_5ns8n"]
+[ext_resource type="Script" uid="uid://cosh7ddsywchx" path="res://cenas/sparkles_front.gd" id="9_676e1"]
+[ext_resource type="FontFile" uid="uid://g38ogbr7dv7l" path="res://Chopera.otf" id="12_676e1"]
+[ext_resource type="Shader" uid="uid://dfrqq4q8lwj2b" path="res://cenas/main_menu.gdshader" id="12_tjhei"]
+[ext_resource type="FontFile" uid="uid://bbasinxdwxk53" path="res://BabaPro-Bold.ttf" id="15_wg7js"]
+[ext_resource type="AudioStream" uid="uid://bbql6y0xmdn80" path="res://free-moon-pixel-game-backgrounds/backgroundmusicforvideos-game-minecraft-gaming-background-music-402451.mp3" id="16_g8w35"]
+[ext_resource type="Script" uid="uid://7efgods4ncuw" path="res://cenas/path_follow_2d.gd" id="17_f8rga"]
+[ext_resource type="PackedScene" uid="uid://b11qii2yid6wd" path="res://cenas/nave_menu.tscn" id="18_g8w35"]
+[ext_resource type="Script" uid="uid://bynfyi71q8yet" path="res://cenas/path_follow_2d2.gd" id="19_g8w35"]
+[ext_resource type="AudioStream" uid="uid://b7khts51ep1rv" path="res://rescopicsound-ui-click-menu-modern-interface-select-small-01-230473.mp3" id="20_wkw5b"]
+[ext_resource type="AudioStream" uid="uid://5gejdx6e2q4h" path="res://juniorsoundays-ui-sound-07-527852.mp3" id="21_c27ia"]
+[ext_resource type="Texture2D" uid="uid://ch3ad75lyvg7y" path="res://Space_Game_GUI_PNG/PNG/Accept/Window.png" id="22_k3ryv"]
+[ext_resource type="FontFile" uid="uid://b4guhiky2s1xp" path="res://Orbitron-ExtraBold.ttf" id="23_ty7cc"]
+[ext_resource type="FontFile" uid="uid://7jm4bacei5w" path="res://Nasalization Rg.otf" id="24_6c6kr"]
+[ext_resource type="Texture2D" uid="uid://dq0dorcg5f5hr" path="res://Space_Game_GUI_PNG/PNG/You_Lose/Close_BTN.png" id="25_a3j82"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_asf56"]
+shader = ExtResource("12_tjhei")
+shader_parameter/shine_color = Color(1, 1, 1, 0.5)
+shader_parameter/speed = 0.27400000975512
+shader_parameter/width = 0.2
+shader_parameter/offset = 0.005
+
+[sub_resource type="LabelSettings" id="LabelSettings_qf3nd"]
+font = ExtResource("12_676e1")
+font_size = 115
+outline_size = 2
+shadow_size = 4
+shadow_color = Color(0.15068585, 0.0076714098, 0.17504144, 0.7764706)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wg7js"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nx0m"]
+bg_color = Color(0.95596343, 0.9559633, 0.95596343, 0)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 6
+expand_margin_left = 40.0
+expand_margin_right = 40.0
+expand_margin_bottom = 5.0
+shadow_color = Color(0.011087579, 0.011087578, 0.01108758, 0.6)
+shadow_size = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3nx0m"]
+
+[sub_resource type="Curve2D" id="Curve2D_dqtgr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4a8p"]
+font_size = 26
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.9254902)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w85kd"]
+font = ExtResource("24_6c6kr")
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 0.58431375)
+
+[node name="MainMenu" type="Control" unique_id=2039934714]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_asf56")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=326415343]
+position = Vector2(576, 315)
+scale = Vector2(2.127, 2.224)
+metadata/_edit_group_ = true
+
+[node name="bg" type="Sprite2D" parent="Node2D" unique_id=57658824]
+texture = ExtResource("1_xlclq")
+
+[node name="forest" type="Sprite2D" parent="Node2D" unique_id=1479293740]
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("2_5ns8n")
+script = ExtResource("3_676e1")
+
+[node name="moon" type="Sprite2D" parent="Node2D" unique_id=1671346769]
+texture_filter = 1
+texture = ExtResource("2_um4lk")
+script = ExtResource("3_5t5rh")
+
+[node name="sparkles end" type="Sprite2D" parent="Node2D" unique_id=2087643177]
+position = Vector2(28.964155, -5.9606943)
+scale = Vector2(0.15437071, 0.08640657)
+texture = ExtResource("3_kgs3e")
+script = ExtResource("5_fkfeq")
+
+[node name="bushes2" type="Sprite2D" parent="Node2D" unique_id=105674256]
+visible = false
+texture = ExtResource("4_s5yxo")
+script = ExtResource("7_5ns8n")
+
+[node name="sparkles front" type="Sprite2D" parent="Node2D" unique_id=1167554319]
+texture_filter = 1
+position = Vector2(1.6093254e-06, -12.000003)
+scale = Vector2(0.140625, 0.08447265)
+texture = ExtResource("5_5t5rh")
+script = ExtResource("9_676e1")
+
+[node name="Label" type="Label" parent="." unique_id=1706535879]
+material = SubResource("ShaderMaterial_asf56")
+layout_mode = 0
+offset_left = 24.0
+offset_top = 200.0
+offset_right = 1147.0
+offset_bottom = 398.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.40784314, 0.0627451, 0.41568628, 0.6745098)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/outline_size = 4
+theme_override_constants/shadow_outline_size = 26
+theme_override_fonts/font = ExtResource("12_676e1")
+theme_override_font_sizes/font_size = 111
+text = "Text_write"
+label_settings = SubResource("LabelSettings_qf3nd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=116598146]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 408.0
+offset_right = 656.0
+offset_bottom = 552.0
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="start" type="Button" parent="VBoxContainer" unique_id=1123690753]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.1370045, 0.0610871, 0.2840516, 0.76862746)
+theme_override_constants/h_separation = 5
+theme_override_fonts/font = ExtResource("15_wg7js")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wg7js")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3nx0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3nx0m")
+text = "start"
+
+[node name="credits" type="Button" parent="VBoxContainer" unique_id=2060284587]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.7740368, 0.72766566, 0.9714506, 0.76862746)
+theme_override_constants/h_separation = 5
+theme_override_fonts/font = ExtResource("15_wg7js")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wg7js")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3nx0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3nx0m")
+text = "credits"
+
+[node name="quit" type="Button" parent="VBoxContainer" unique_id=2093495262]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.7306792, 0.67101955, 0.9648866, 0.76862746)
+theme_override_fonts/font = ExtResource("15_wg7js")
+theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3nx0m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3nx0m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3nx0m")
+text = "quit"
+
+[node name="MusicMenu" type="AudioStreamPlayer" parent="." unique_id=139046131]
+stream = ExtResource("16_g8w35")
+autoplay = true
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1065261594]
+curve = SubResource("Curve2D_dqtgr")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1257202917]
+script = ExtResource("17_f8rga")
+
+[node name="NaveMenu" parent="Path2D/PathFollow2D" unique_id=1453730403 instance=ExtResource("18_g8w35")]
+position = Vector2(240, 584)
+
+[node name="Path2D2" type="Path2D" parent="." unique_id=443647036]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D2" unique_id=853047048]
+script = ExtResource("19_g8w35")
+
+[node name="NaveMenu2" parent="Path2D2/PathFollow2D" unique_id=127895966 instance=ExtResource("18_g8w35")]
+position = Vector2(408, 192)
+
+[node name="SomClique" type="AudioStreamPlayer" parent="." unique_id=950406856]
+stream = ExtResource("20_wkw5b")
+
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1419666902]
+stream = ExtResource("21_c27ia")
+
+[node name="CreditosMenu" type="Control" parent="." unique_id=1784415453]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="CreditosMenu" unique_id=1675384556]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 176.0
+offset_right = 760.0
+offset_bottom = 464.0
+texture = ExtResource("22_k3ryv")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="CreditosMenu" unique_id=1808494008]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 186.0
+offset_right = 657.0
+offset_bottom = 222.0
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("23_ty7cc")
+theme_override_font_sizes/font_size = 25
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_c4a8p")
+
+[node name="Label" type="Label" parent="CreditosMenu" unique_id=1351510716]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 256.0
+offset_right = 780.0
+offset_bottom = 325.0
+text = "FEITO POR SARA, VITOR E HARIEL.
+
+PRIMEIRAMENTE
+GOSTARIAMOS DE AGRADECER POR 
+JOGAR NOSSO JOGO!!
+
+ESPERO QUE TENHAM UMA BOA 
+JOGATINA <3"
+label_settings = SubResource("LabelSettings_w85kd")
+
+[node name="CloseBtn" type="TextureButton" parent="CreditosMenu" unique_id=2036863777]
+layout_mode = 0
+offset_left = 717.0
+offset_top = 421.0
+offset_right = 927.0
+offset_bottom = 631.0
+scale = Vector2(0.09761916, 0.09761909)
+texture_normal = ExtResource("25_a3j82")
+
+[node name="SomClique" type="AudioStreamPlayer" parent="CreditosMenu" unique_id=1154162943]
+stream = ExtResource("20_wkw5b")
+
+[node name="SomHover" type="AudioStreamPlayer" parent="CreditosMenu" unique_id=1285892756]
+stream = ExtResource("21_c27ia")
+
+[connection signal="mouse_entered" from="VBoxContainer/start" to="." method="_on_start_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/start" to="." method="_on_start_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="CreditosMenu/CloseBtn" to="." method="_on_close_btn_mouse_entered"]
+[connection signal="mouse_exited" from="CreditosMenu/CloseBtn" to="." method="_on_close_btn_mouse_exited"]
+[connection signal="pressed" from="CreditosMenu/CloseBtn" to="." method="_on_close_btn_pressed"]

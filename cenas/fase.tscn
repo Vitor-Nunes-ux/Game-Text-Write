@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://c2jmpm0r6x7dp"]
+
+[ext_resource type="PackedScene" uid="uid://g0apcm5ovdun" path="res://cenas/parallax_background.tscn" id="1_h2cyb"]
+[ext_resource type="Script" uid="uid://bq1xj5uj7wxfg" path="res://cenas/fase.gd" id="1_v7536"]
+[ext_resource type="PackedScene" uid="uid://bt4gt4ycbw4ob" path="res://cenas/player.tscn" id="2_3rn4x"]
+[ext_resource type="FontFile" uid="uid://7jm4bacei5w" path="res://Nasalization Rg.otf" id="5_v7536"]
+[ext_resource type="FontFile" uid="uid://cpnjqt5tdfn5e" path="res://space_ranger/astral_delight/Astral Delight Black Upright.ttf" id="6_oglc8"]
+[ext_resource type="PackedScene" uid="uid://b7cewrfotspnr" path="res://cenas/enemybg.tscn" id="6_qhqgl"]
+[ext_resource type="PackedScene" uid="uid://bvarpngvcm8ds" path="res://cenas/inimigo.tscn" id="6_udxje"]
+[ext_resource type="Texture2D" uid="uid://ciqhha8pvbq0d" path="res://Space_Game_GUI_PNG/PNG/Buttons/BTNs/Pause_BTN.png" id="7_g3yj5"]
+[ext_resource type="PackedScene" uid="uid://b841f5l4jmov6" path="res://cenas/enemybg2.tscn" id="7_qhqgl"]
+[ext_resource type="Texture2D" uid="uid://bm7hykyd1bn3w" path="res://Space_Game_GUI_PNG/PNG/Buttons/BTNs/Play_BTN.png" id="8_5pw02"]
+[ext_resource type="AudioStream" uid="uid://dmk8qij4ecsaa" path="res://064-laser-thum_hYpSdXS.mp3" id="8_yt2gt"]
+[ext_resource type="AudioStream" uid="uid://cbthpxtmoti5b" path="res://backgroundmusicforvideos-game-gaming-minecraft-background-music-379533.mp3" id="9_k8itr"]
+[ext_resource type="PackedScene" uid="uid://d23b2b6p6g5r6" path="res://cenas/planeta.tscn" id="10_s6ras"]
+[ext_resource type="AudioStream" uid="uid://b7khts51ep1rv" path="res://rescopicsound-ui-click-menu-modern-interface-select-small-01-230473.mp3" id="14_733h5"]
+[ext_resource type="AudioStream" uid="uid://5gejdx6e2q4h" path="res://juniorsoundays-ui-sound-07-527852.mp3" id="15_hrpww"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udxje"]
+size = Vector2(1168, 8)
+
+[sub_resource type="LabelSettings" id="LabelSettings_m4jdx"]
+font_size = 150
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="fase" type="Node" unique_id=297163036]
+script = ExtResource("1_v7536")
+
+[node name="Player" parent="." unique_id=1568436081 instance=ExtResource("2_3rn4x")]
+position = Vector2(544, 624)
+
+[node name="ParallaxJogo" parent="." unique_id=865980535 instance=ExtResource("1_h2cyb")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=258784689]
+position = Vector2(576, 324)
+
+[node name="Inimigo" parent="." unique_id=310012253 instance=ExtResource("6_udxje")]
+position = Vector2(568, -56)
+
+[node name="LinhaMorte" type="Area2D" parent="." unique_id=1016054687]
+position = Vector2(528, 512)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LinhaMorte" unique_id=738450236]
+position = Vector2(48, 36)
+shape = SubResource("RectangleShape2D_udxje")
+debug_color = Color(0.43612987, 0, 0.061912633, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="LinhaMorte/CollisionShape2D" unique_id=271307244]
+texture_filter = 1
+offset_left = -584.0
+offset_top = -4.0
+offset_right = 584.0
+offset_bottom = 4.0
+color = Color(0.20179194, 0, 0.0034763878, 1)
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1881873391]
+wait_time = 2.5
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1358457164]
+
+[node name="LabelPontos" type="Label" parent="CanvasLayer" unique_id=1578055827]
+anchors_preset = -1
+anchor_right = 0.99300003
+anchor_bottom = 0.16000001
+offset_left = 1000.0
+offset_top = 24.0
+offset_right = -103.936035
+offset_bottom = -56.680008
+theme_override_fonts/font = ExtResource("5_v7536")
+theme_override_font_sizes/font_size = 20
+text = "0"
+
+[node name="LabelRanking" type="Label" parent="CanvasLayer" unique_id=1916130190]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 229.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("5_v7536")
+theme_override_font_sizes/font_size = 20
+text = "Carregando Ranking..."
+
+[node name="BotaoPause" type="TextureButton" parent="CanvasLayer" unique_id=861344161]
+process_mode = 3
+visible = false
+offset_left = 1048.0
+offset_top = 72.0
+offset_right = 1088.0
+offset_bottom = 112.0
+texture_normal = ExtResource("7_g3yj5")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PainelPause" type="Control" parent="CanvasLayer" unique_id=301453394]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PainelPause" unique_id=1901721628]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.12156863)
+
+[node name="Label" type="Label" parent="CanvasLayer/PainelPause" unique_id=1741323920]
+layout_mode = 0
+offset_top = 144.0
+offset_right = 1152.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("6_oglc8")
+theme_override_font_sizes/font_size = 150
+text = "PAUSE"
+label_settings = SubResource("LabelSettings_m4jdx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BotaoPlay" type="TextureButton" parent="CanvasLayer/PainelPause" unique_id=204389339]
+process_mode = 3
+layout_mode = 0
+offset_left = 552.0
+offset_top = 384.0
+offset_right = 608.0
+offset_bottom = 440.0
+texture_normal = ExtResource("8_5pw02")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="SomClique" type="AudioStreamPlayer" parent="CanvasLayer/PainelPause" unique_id=1571185144]
+process_mode = 3
+stream = ExtResource("14_733h5")
+volume_db = 8.104
+
+[node name="SomHover" type="AudioStreamPlayer" parent="CanvasLayer/PainelPause" unique_id=1413445082]
+process_mode = 3
+stream = ExtResource("15_hrpww")
+volume_db = 8.104
+
+[node name="crater 2" parent="." unique_id=341310384 instance=ExtResource("6_qhqgl")]
+position = Vector2(424, 304)
+
+[node name="crater 1" parent="." unique_id=1755072205 instance=ExtResource("6_qhqgl")]
+position = Vector2(984, 480)
+amplitude = Vector2(40, 40)
+
+[node name="pop" parent="." unique_id=907161782 instance=ExtResource("7_qhqgl")]
+position = Vector2(224, 240)
+scale = Vector2(1.1, 1)
+amplitude = Vector2(22, 20)
+
+[node name="pop2" parent="." unique_id=1005630282 instance=ExtResource("7_qhqgl")]
+position = Vector2(616, 128)
+amplitude = Vector2(20, 10)
+
+[node name="pop3" parent="." unique_id=177792404 instance=ExtResource("7_qhqgl")]
+position = Vector2(616, 504)
+amplitude = Vector2(33, 10)
+
+[node name="crater 3" parent="." unique_id=1453450556 instance=ExtResource("6_qhqgl")]
+position = Vector2(1008, 176)
+amplitude = Vector2(30, 20)
+
+[node name="SomAcerto" type="AudioStreamPlayer" parent="." unique_id=500287134]
+stream = ExtResource("8_yt2gt")
+volume_db = -13.506
+
+[node name="MusicaFundo" type="AudioStreamPlayer" parent="." unique_id=2103164689]
+stream = ExtResource("9_k8itr")
+autoplay = true
+parameters/looping = true
+
+[node name="CharacterBody2D" parent="." unique_id=1510571009 instance=ExtResource("10_s6ras")]
+position = Vector2(840, 296)
+
+[connection signal="area_entered" from="LinhaMorte" to="." method="_on_linha_morte_area_entered"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="mouse_entered" from="CanvasLayer/BotaoPause" to="." method="_on_botao_pause_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/BotaoPause" to="." method="_on_botao_pause_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/BotaoPause" to="." method="_on_botao_pause_pressed"]
+[connection signal="mouse_entered" from="CanvasLayer/PainelPause/BotaoPlay" to="." method="_on_botao_play_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/PainelPause/BotaoPlay" to="." method="_on_botao_play_mouse_exited"]
+[connection signal="pressed" from="CanvasLayer/PainelPause/BotaoPlay" to="." method="_on_botao_play_pressed"]

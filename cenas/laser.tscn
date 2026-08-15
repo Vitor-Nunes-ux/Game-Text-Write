@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://df7aqohnrcwvd"]
+
+[ext_resource type="Script" uid="uid://01x68k1pqkku" path="res://cenas/laser.gd" id="1_8qx5b"]
+[ext_resource type="Texture2D" uid="uid://ckpy4wvao5dak" path="res://Foozle_2DS0011_Void_MainShip/Main ship weapons/PNGs/Main ship weapon - Projectile - Zapper.png" id="1_df4a0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xk1fx"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d02v"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pitdm"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nv70"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad1op"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ksu8"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpxso"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2rbk"]
+atlas = ExtResource("1_df4a0")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ryeu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xk1fx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d02v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pitdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nv70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad1op")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ksu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpxso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2rbk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3jv0"]
+size = Vector2(8, 32)
+
+[node name="Laser" type="CharacterBody2D" unique_id=1982127954]
+script = ExtResource("1_8qx5b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=666089143]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0ryeu")
+autoplay = "default"
+frame_progress = 0.3402448
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=660665271]
+shape = SubResource("RectangleShape2D_q3jv0")

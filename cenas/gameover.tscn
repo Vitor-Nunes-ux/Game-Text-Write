@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://bm3guf0uorwkk"]
+
+[ext_resource type="Texture2D" uid="uid://bymohhovupevm" path="res://Space_Game_GUI_PNG/PNG/Main_Menu/BG.png" id="1_5ywaj"]
+[ext_resource type="Script" uid="uid://ctolstnfqmjmd" path="res://cenas/gameover.gd" id="1_rh6q1"]
+[ext_resource type="Texture2D" uid="uid://crpy2p8ht8sp5" path="res://Space_Game_GUI_PNG/PNG/You_Lose/Replay_BTN.png" id="3_4jpr2"]
+[ext_resource type="Texture2D" uid="uid://dq0dorcg5f5hr" path="res://Space_Game_GUI_PNG/PNG/You_Lose/Close_BTN.png" id="4_ul1xm"]
+[ext_resource type="FontFile" uid="uid://c0yy465x8nwut" path="res://space_ranger/astral_delight/Astral Delight Black.ttf" id="5_5ywaj"]
+[ext_resource type="Texture2D" uid="uid://rkaarn63n77x" path="res://Space_Game_GUI_PNG/PNG/You_Lose/Play_BTN.png" id="5_fpyko"]
+[ext_resource type="Shader" uid="uid://dfrqq4q8lwj2b" path="res://cenas/main_menu.gdshader" id="6_4jpr2"]
+[ext_resource type="AudioStream" uid="uid://dsp2fwgp4c5bi" path="res://alphix-game-over-417465.mp3" id="8_ul1xm"]
+[ext_resource type="AudioStream" uid="uid://b7khts51ep1rv" path="res://rescopicsound-ui-click-menu-modern-interface-select-small-01-230473.mp3" id="9_fpyko"]
+[ext_resource type="AudioStream" uid="uid://5gejdx6e2q4h" path="res://juniorsoundays-ui-sound-07-527852.mp3" id="10_ueg4n"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ul1xm"]
+shader = ExtResource("6_4jpr2")
+shader_parameter/shine_color = Color(1, 1, 1, 0.5)
+shader_parameter/speed = 0.27400000975512
+shader_parameter/width = 0.2
+shader_parameter/offset = 0.005
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ywaj"]
+font_size = 180
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0.8862745, 0.8862745, 0.8862745, 1)
+shadow_offset = Vector2(3, 1)
+
+[sub_resource type="Animation" id="Animation_fpyko"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ueg4n"]
+resource_name = "pulsar"
+length = 0.93333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.15, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.7254902, 0.43529412, 1), Color(0.47900242, 0.80926144, 0.7118601, 1), Color(0.99999994, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ff2i3"]
+_data = {
+&"RESET": SubResource("Animation_fpyko"),
+&"pulsar": SubResource("Animation_ueg4n")
+}
+
+[node name="Control" type="Control" unique_id=1063681264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rh6q1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=553717942]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.026791738, 2.6562158e-05, 0.071121536, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=256877732]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 1920.0
+texture = ExtResource("1_5ywaj")
+
+[node name="ReplayBtn" type="TextureButton" parent="." unique_id=12957839]
+layout_mode = 0
+offset_left = 584.0
+offset_top = 440.0
+offset_right = 794.0
+offset_bottom = 650.0
+scale = Vector2(0.30238074, 0.30238074)
+texture_normal = ExtResource("3_4jpr2")
+
+[node name="CloseBtn" type="TextureButton" parent="." unique_id=208204688]
+layout_mode = 0
+offset_left = 1064.0
+offset_top = 592.0
+offset_right = 1274.0
+offset_bottom = 802.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("4_ul1xm")
+
+[node name="PlayBtn" type="TextureButton" parent="." unique_id=711333496]
+layout_mode = 0
+offset_left = 472.00003
+offset_top = 440.0
+offset_right = 682.0
+offset_bottom = 650.0
+scale = Vector2(0.307381, 0.30476198)
+texture_normal = ExtResource("5_fpyko")
+
+[node name="Label" type="Label" parent="." unique_id=860206700]
+material = SubResource("ShaderMaterial_ul1xm")
+layout_mode = 0
+offset_top = 224.0
+offset_right = 1152.0
+offset_bottom = 412.0
+theme_override_fonts/font = ExtResource("5_5ywaj")
+theme_override_font_sizes/font_size = 180
+text = "YOU LOSE"
+label_settings = SubResource("LabelSettings_5ywaj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1144195462]
+libraries/ = SubResource("AnimationLibrary_ff2i3")
+autoplay = &"pulsar"
+
+[node name="SomGameOver" type="AudioStreamPlayer" parent="." unique_id=734937123]
+stream = ExtResource("8_ul1xm")
+autoplay = true
+
+[node name="SomClique" type="AudioStreamPlayer" parent="." unique_id=2044916894]
+stream = ExtResource("9_fpyko")
+volume_db = 8.104
+
+[node name="SomHover" type="AudioStreamPlayer" parent="." unique_id=1964662241]
+stream = ExtResource("10_ueg4n")
+volume_db = 8.104
+
+[connection signal="mouse_entered" from="ReplayBtn" to="." method="_on_replay_btn_mouse_entered"]
+[connection signal="mouse_exited" from="ReplayBtn" to="." method="_on_replay_btn_mouse_exited"]
+[connection signal="pressed" from="ReplayBtn" to="." method="_on_replay_btn_pressed"]
+[connection signal="mouse_entered" from="CloseBtn" to="." method="_on_close_btn_mouse_entered"]
+[connection signal="mouse_exited" from="CloseBtn" to="." method="_on_close_btn_mouse_exited"]
+[connection signal="pressed" from="CloseBtn" to="." method="_on_close_btn_pressed"]
+[connection signal="mouse_entered" from="PlayBtn" to="." method="_on_play_btn_mouse_entered"]
+[connection signal="mouse_exited" from="PlayBtn" to="." method="_on_play_btn_mouse_exited"]
+[connection signal="pressed" from="PlayBtn" to="." method="_on_play_btn_pressed"]

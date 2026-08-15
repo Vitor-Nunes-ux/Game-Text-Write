@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b841f5l4jmov6"]
+
+[ext_resource type="Script" uid="uid://cv85sq2001vq8" path="res://cenas/enemybg.gd" id="1_e2ccl"]
+[ext_resource type="Texture2D" uid="uid://b1j0islbc5ngh" path="res://Mini Pixel Pack 3/Enemies/Bon_Bon (16 x 16).png" id="2_ga0es"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1kgs"]
+atlas = ExtResource("2_ga0es")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fesu0"]
+atlas = ExtResource("2_ga0es")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1p65o"]
+atlas = ExtResource("2_ga0es")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o58lc"]
+atlas = ExtResource("2_ga0es")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6fdt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1kgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fesu0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1p65o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o58lc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6awo1"]
+size = Vector2(16, 16)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1453450556]
+script = ExtResource("1_e2ccl")
+amplitude = Vector2(40, 20)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=490585682]
+texture_filter = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_w6fdt")
+frame_progress = 0.53929394
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1645246354]
+shape = SubResource("RectangleShape2D_6awo1")

@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://bvarpngvcm8ds"]
+
+[ext_resource type="Script" uid="uid://fdll02dd64t7" path="res://cenas/inimigo.gd" id="1_l8wry"]
+[ext_resource type="Texture2D" uid="uid://dawdns3i25isi" path="res://Mini Pixel Pack 3/Enemies/Alan (16 x 16).png" id="2_g2cae"]
+[ext_resource type="FontFile" uid="uid://7jm4bacei5w" path="res://Nasalization Rg.otf" id="3_g2cae"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2cae"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5rp5"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1cxn"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ehji"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h71cv"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1rxv"]
+atlas = ExtResource("2_g2cae")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsqkj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2cae")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5rp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1cxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ehji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h71cv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1rxv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8wry"]
+
+[node name="Inimigo" type="Area2D" unique_id=310012253 groups=["inimigos"]]
+texture_filter = 1
+script = ExtResource("1_l8wry")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=371919698]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hsqkj")
+frame_progress = 0.8283642
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1186668797]
+texture_filter = 1
+offset_right = 320.0
+offset_bottom = 80.0
+theme_override_fonts/normal_font = ExtResource("3_g2cae")
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 17
+bbcode_enabled = true
+text = "godot"
+fit_content = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1211874213]
+shape = SubResource("CircleShape2D_l8wry")
